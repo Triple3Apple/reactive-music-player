@@ -1,0 +1,50 @@
+/* Global Style */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  background: rgb(30, 215, 96);
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+.container {
+  background: rgb(30, 215, 96);
+}
+
+#root {
+  background: rgb(30, 215, 96);
+}
+
+#btn-authorize {
+  font-family: "Noto Sans", sans-serif;
+  padding: 2rem 4rem;
+  background: rgb(40, 40, 40);
+  border: none;
+  color: whitesmoke;
+  font-size: calc(15px + 2vw);
+  border-radius: 5px;
+  cursor: pointer;
+
+  /* 
+      Used for Transitioning
+      transition: background 0.25s ease-in-out;
+      background <-- we are transitioning the background
+      0.25s <-- transition time
+      ease-in-out <-- transition curve
+    */
+  transition: background 0.25s ease-in-out;
+
+  justify-content: center;
+  align-self: center;
+}
+
+#btn-authorize:hover {
+  background: rgb(59, 59, 59);
+}
