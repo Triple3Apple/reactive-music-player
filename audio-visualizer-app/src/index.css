@@ -59,24 +59,24 @@ main {
 
   background: none;
   appearance: none;
-  background-color: rgba(212, 212, 212, 0.8);
+  background-color: rgba(224, 224, 224, 0.6);
   box-shadow: 0 0 1px 1px rgba(148, 148, 200, 0.1);
 
-  transition: box-shadow 1s ease-in-out;
-  transition: background-color 0.5s linear;
-  transition: transform 0.2s ease-in-out;
+  /* 
+  NOTE: To add multiple transitions use only one statement or else it will override
+  the other transition, look below. 
+  */
+  transition: background-color 0.2s ease-in, transform 0.1s ease-in;
 }
 
 .search-bar:focus {
-  box-shadow: 0 0 5px 5px rgba(148, 148, 200, 0.5);
-  background-color: rgba(207, 39, 39, 0.95);
+  background-color: rgba(210, 211, 214, 0.95);
   outline: none;
   transform: scale(1.05, 1.05);
 }
 
 .search-bar:hover {
   transform: scale(1.05, 1.05);
-  color: black;
 }
 
 .search-bar:focus::placeholder {
@@ -85,4 +85,49 @@ main {
 
 .search-bar::placeholder {
   color: rgb(68, 68, 68);
+}
+
+.location-box .location {
+  font-size: 5rem;
+  font-weight: bold;
+  color: rgb(249, 252, 255);
+  text-shadow: 4px 4px #1d1e20;
+  text-align: center;
+  margin: 7rem 3rem 0rem 3rem;
+}
+
+.location-box .date {
+  font-size: 2.5rem;
+  font-style: italic;
+  color: rgb(249, 252, 255);
+  text-shadow: 2px 2px #1d1e20;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.weather-box {
+  text-align: center;
+}
+
+.weather-box .temp {
+  position: relative;
+  font-size: 15rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 4px 4px 5px #1d1e20;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+
+  background: rgba(148, 148, 200, 0.15);
+
+  padding: 6rem 1rem 6rem 1rem;
+  margin: 2rem 45rem 2rem 45rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.weather-box .weather {
+  font-size: 6rem;
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  text-shadow: 3px 3px 3px #000000;
 }
