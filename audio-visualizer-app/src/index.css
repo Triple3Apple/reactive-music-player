@@ -12,14 +12,35 @@ html {
 
 body {
   font-family: "Noto Sans", sans-serif;
+  height: 100%;
+  background: rgb(255, 148, 8);
+  align-items: center;
+  justify-content: center;
 }
 
-.app {
-  background-image: url("./assets/images/cloudy-bg.png");
-  background-size: cover;
-  background-position: bottom;
-  transition: background 0.3s ease-out;
+.upload-music-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 50vh;
+  width: 50vh;
+  background: rgb(143, 132, 118);
 }
+
+.upload-music-button {
+  background: rgb(156, 156, 156);
+  padding: 3rem 5rem;
+  border-radius: 10px;
+
+  transition: background 0.2s ease-in-out;
+}
+
+.upload-music-button:hover {
+  background: rgb(158, 108, 108);
+}
+
+/*
 
 .app.rainy {
   background-image: url("./assets/images/rainy-bg.png");
@@ -62,11 +83,7 @@ main {
   background-color: rgba(224, 224, 224, 0.6);
   box-shadow: 0 0 1px 1px rgba(148, 148, 200, 0.1);
 
-  /* 
-  NOTE: To add multiple transitions use only one statement or else it will override
-  the other transition, look below. 
-  */
-  transition: background-color 0.2s ease-in, transform 0.1s ease-in;
+  transition: background-color 0.2s ease-in, transform 0.1s ease-in; 
 }
 
 .search-bar:focus {
@@ -131,3 +148,5 @@ main {
   font-weight: 700;
   text-shadow: 3px 3px 3px #000000;
 }
+
+*/
