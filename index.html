@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="visualizer-page">
+      <header>
+        <nav>
+          <h1 class="website-title">Maybe Working Audio Visualizer</h1>
+          <div class="nav-links">
+            <ul>
+              <li><a href="#about">About</a></li>
+            </ul>
+            <ul>
+              <li>
+                <a href="https://github.com/Triple3Apple/reactive-music-player"
+                  >Source Code</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <div class="main-content">
+        <section class="song-bar">
+          <div class="song" id="song1">
+            <h2 class="song-name">Song1 Name</h2>
+            <img
+              class="play-button"
+              src="./play-button-arrowhead.png"
+              alt="play button"
+            />
+          </div>
+          <div class="song" id="song2">
+            <h2 class="song-name">Song2 Name</h2>
+            <img
+              class="play-button"
+              src="./play-button-arrowhead.png"
+              alt="play button"
+            />
+          </div>
+          <div class="song" id="song3">
+            <h2 class="song-name">Song3 Name</h2>
+            <img
+              class="play-button"
+              src="./play-button-arrowhead.png"
+              alt="play button"
+            />
+          </div>
+        </section>
+
+        <section class="audio-visualizer">
+          <canvas></canvas>
+        </section>
+      </div>
+    </div>
+
+    <section id="about">
+      <div>
+        Icons made by
+        <a href="https://www.freepik.com" title="Freepik">Freepik</a> from
+        <a href="https://www.flaticon.com/" title="Flaticon"
+          >www.flaticon.com</a
+        >
+      </div>
+    </section>
+  </body>
+</html>
