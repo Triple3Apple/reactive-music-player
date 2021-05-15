@@ -2,6 +2,8 @@
 let trackNames = ['sawsquarenoise - Tittle Screen', 'Shaolin Dub - Growing Resistance'];
 let tracks = [];
 let currSong = null;
+var song1Button = document.getElementById('song1-button');
+var song2Button = document.getElementById('song2-button');
 
 
 function setup() {
@@ -13,46 +15,12 @@ function setup() {
 function preload() {
     soundFormats('mp3', 'ogg');
 
-    loadTracks();
-
-    // load tracks
-    //trackNames.forEach(trackName => {
-    //let track = loadSound(`assets/audio/${trackName}`, addToTracks(track));
-
-    //let track = await loadTrack(trackName);
-    /*
-            fetch(loadTrack())
-                .then(track => tracks.push(track))
-                .then(console.log(`Loaded ${trackName}`))
-                .catch(err => console.error(err)));
-                */
-
-    // tracks.push(track);
-    //console.log(`Loaded ${trackName}`)
-
-
-    // for (let index = 0; index < trackNames.length; index++) {
-    //     let track = loadSound(`assets/audio/${trackNames[index]}`);
-
-    //     tracks.push(track);
-    //     console.log(`Loaded ${trackNames[index]}`)
-    // }
-
-}
-
-async function loadTracks(track_name) {
-    // let track = loadSound(`assets/audio/${track_name}`)
-    // return track;
-
+    // Load tracks
     trackNames.forEach(trackName => {
-        //let track = loadSound(`assets/audio/${trackName}`, addToTracks(track));
-
-        let track = await loadSound(`assets/audio/${trackName}`);
-
-        tracks.push(track);
-
+        tracks.push(loadSound(`assets/audio/${trackName}`));
     });
 }
+
 
 function addToTracks(t) {
     tracks.push(t);
@@ -70,9 +38,17 @@ function toggleTrack(trackNumber) {
 
         // Pause music only if button was pressed for the same track
         // meaning that the user wanted to pause the music
-        if (currSong === tracks[trackNumber]) return;
+        if (currSong === tracks[trackNumber]) {
+
+            // TODO: Make it so it pause the track, not stopping it, which restarts it once button is clicked again.
+
+            updatePlayButtons(trackNumber, true);
+
+            return;
+        }
     }
 
+    updatePlayButtons(trackNumber, false);
 
 
     isValidTrack = trackNumber < tracks.length;
@@ -86,6 +62,37 @@ function toggleTrack(trackNumber) {
     currSong = tracks[trackNumber];
 
     //console.log(`Played trackNumber ${trackNumber}`);
+
+}
+
+// Update play button to stop or play depending on what was clicked
+function updatePlayButtons(trackNumber, isSameTrack) {
+
+    // Make all button text to PLAY.
+    song1Button.innerHTML = 'Play';
+    song2Button.innerHTML = 'Play';
+
+    if (isSameTrack) return;
+
+    switch (trackNumber) {
+        case 0:
+            song1Button.innerHTML = 'Stop';
+            console.log('song1button set to STOP');
+            break;
+        case 1:
+            song2Button.innerHTML = 'Stop';
+            console.log('song2button set to STOP');
+            break;
+        case 2:
+
+            break;
+        default:
+        // error
+    }
+
+    if (isSameTrack) {
+
+    }
 
 }
 

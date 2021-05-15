@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.3.1/addons/p5.sound.js"></script>
-    <script src="./js/main.js"></script>
+
     <title>Document</title>
   </head>
   <body>
@@ -41,11 +41,23 @@
         <section class="song-bar">
           <div class="song" id="song1">
             <h2 class="song-name">Tittle Screen</h2>
-            <button class="play-button" onclick="toggleTrack(0)">Play</button>
+            <button
+              class="play-button"
+              id="song1-button"
+              onclick="toggleTrack(0)"
+            >
+              Play
+            </button>
           </div>
           <div class="song" id="song2">
             <h2 class="song-name">Growing Resistance</h2>
-            <button class="play-button" onclick="toggleTrack(1)">Play</button>
+            <button
+              class="play-button"
+              id="song2-button"
+              onclick="toggleTrack(1)"
+            >
+              Play
+            </button>
           </div>
           <div class="song" id="song3">
             <h2 class="song-name">Song3 Name</h2>
@@ -72,5 +84,7 @@
         >
       </div>
     </section>
+    <!-- Script tag moved to the bottom since html was not loaded when main.js started -->
+    <script src="./js/main.js"></script>
   </body>
 </html>
