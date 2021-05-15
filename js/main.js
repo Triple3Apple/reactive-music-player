@@ -17,7 +17,7 @@ function preload() {
 
     // Load tracks
     trackNames.forEach(trackName => {
-        tracks.push(loadSound(`assets/audio/${trackName}`));
+        tracks.push(loadSound(`assets/audio/${trackName}`, showMediaButtons));
     });
 }
 
@@ -87,17 +87,33 @@ function updatePlayButtons(trackNumber, isSameTrack) {
 
             break;
         default:
+            console.log(`error, trackNumber = ${trackNumber}`);
         // error
     }
+}
 
-    if (isSameTrack) {
+function replayTrack(trackNum) {
 
-    }
+    // Gets length of audio
+    // let len = currSong.duration();
+
+    // if (currTrack != null) {
+    //     currSong.jump(0);
+    //     return;
+    // }
+
+    if (currSong != null) currSong.stop();
+
+    // Restart
+    currSong = tracks[trackNum];
+    currSong.jump(0);
+    currSong.play();
+
+    updatePlayButtons(trackNum, false)
 
 }
 
-function replayTrack(trackNumber) {
-
-
-
+// Show the media buttons, why? because buttons are hidden when the music is not loaded.
+function showMediaButtons() {
+    document.getElementById('song1-button').style.visibility = 'visible';
 }
