@@ -89,15 +89,19 @@ nav .website-title {
   display: none;
 }
 
-#song1-play-button {
+/* Selecting two elements using the comma selector. */
+#song1-play-button,
+#song2-play-button {
   background: url(./assets/img/play-button-arrowhead.svg);
   background-position: center;
   background-size: 70%;
   background-repeat: no-repeat;
-  transition: background-size 0.1s ease-in-out;
+  transition: background-size 0.1s linear;
+  cursor: pointer;
 }
 
-#song1-play-button:hover {
+#song1-play-button:hover,
+#song2-play-button:hover {
   background-size: 80%;
 }
 

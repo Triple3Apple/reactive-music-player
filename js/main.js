@@ -71,9 +71,7 @@ function updatePlayButtons(trackNumber, isSameTrack) {
     // Make all button text to PLAY.
     //song1Button.innerHTML = 'Play';
     $('#song1-play-button').css('background-image', "url('./assets/img/play-button-arrowhead.svg')");
-
-
-    song2Button.innerHTML = 'Play';
+    $('#song2-play-button').css('background-image', "url('./assets/img/play-button-arrowhead.svg')");
 
     if (isSameTrack) return;
 
@@ -82,12 +80,14 @@ function updatePlayButtons(trackNumber, isSameTrack) {
             //song1Button.innerHTML = 'Stop';
             // making the image of the button change to Stop
             // TODO: Change to STOP icon
-            $('#song1-play-button').css('background-image', "url('./assets/img/pause.svg')");
+            $(`#song${trackNumber + 1}-play-button`).css('background-image', "url('./assets/img/pause.svg')");
 
             console.log('song1button set to STOP');
             break;
         case 1:
-            song2Button.innerHTML = 'Stop';
+            //song2Button.innerHTML = 'Stop';
+
+            $(`#song${trackNumber + 1}-play-button`).css('background-image', "url('./assets/img/pause.svg')");
             console.log('song2button set to STOP');
             break;
         case 2:
@@ -127,7 +127,10 @@ function showMediaButtons(trackNum) {
 
     // jquery slideDown method
     //$("#song1").children().slideDown(900, 'swing');
+    let delay = 400;
+    setTimeout(function () {
+        $(`#song${trackNum + 1}`).children().slideDown(900, 'swing');
+    }, delay);
 
-    $(`#song${trackNum + 1}`).children().slideDown(900, 'swing');
     //$(`#song${trackNum + 1}`).children().fadeIn(900, 'swing');
 }
