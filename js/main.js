@@ -2,8 +2,8 @@
 let trackNames = ['sawsquarenoise - Tittle Screen', 'Shaolin Dub - Growing Resistance'];
 let tracks = [];
 let currSong = null;
-var song1Button = document.getElementById('song1-button');
-var song2Button = document.getElementById('song2-button');
+var song1Button = document.getElementById('song1-play-button');
+var song2Button = document.getElementById('song2-play-button');
 
 
 function setup() {
@@ -15,20 +15,20 @@ function setup() {
 function preload() {
     soundFormats('mp3', 'ogg');
 
+    let trackNum = 0;
+
     // Load tracks
     trackNames.forEach(trackName => {
-        tracks.push(loadSound(`assets/audio/${trackName}`, showMediaButtons));
+        // media buttons are displayed once done loading
+        tracks.push(loadSound(`assets/audio/${trackName}`, showMediaButtons(trackNum)));
+        trackNum++;
+        console.log(`Loaded ${trackName}`)
     });
 }
 
 
 function addToTracks(t) {
     tracks.push(t);
-}
-
-function test(text) {
-    alert('test function called! ' + text);
-    song0.play();
 }
 
 function toggleTrack(trackNumber) {
@@ -69,14 +69,21 @@ function toggleTrack(trackNumber) {
 function updatePlayButtons(trackNumber, isSameTrack) {
 
     // Make all button text to PLAY.
-    song1Button.innerHTML = 'Play';
+    //song1Button.innerHTML = 'Play';
+    $('#song1-play-button').css('background-image', "url('./assets/img/play-button-arrowhead.svg')");
+
+
     song2Button.innerHTML = 'Play';
 
     if (isSameTrack) return;
 
     switch (trackNumber) {
         case 0:
-            song1Button.innerHTML = 'Stop';
+            //song1Button.innerHTML = 'Stop';
+            // making the image of the button change to Stop
+            // TODO: Change to STOP icon
+            $('#song1-play-button').css('background-image', "url('./assets/img/pause.svg')");
+
             console.log('song1button set to STOP');
             break;
         case 1:
@@ -114,6 +121,13 @@ function replayTrack(trackNum) {
 }
 
 // Show the media buttons, why? because buttons are hidden when the music is not loaded.
-function showMediaButtons() {
-    document.getElementById('song1-button').style.visibility = 'visible';
+function showMediaButtons(trackNum) {
+    //document.getElementById('song1-button').style.visibility = 'visible';
+
+
+    // jquery slideDown method
+    //$("#song1").children().slideDown(900, 'swing');
+
+    $(`#song${trackNum + 1}`).children().slideDown(900, 'swing');
+    //$(`#song${trackNum + 1}`).children().fadeIn(900, 'swing');
 }

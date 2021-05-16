@@ -77,8 +77,33 @@ nav .website-title {
   text-align: center;
 }
 
-#song1-button {
-  visibility: hidden;
+/* .song1-button {
+  display: none;
+} */
+
+#song1 * {
+  display: none;
+}
+
+#song2 * {
+  display: none;
+}
+
+#song1-play-button {
+  background: url(./assets/img/play-button-arrowhead.svg);
+  background-position: center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  transition: background-size 0.1s ease-in-out;
+}
+
+#song1-play-button:hover {
+  background-size: 80%;
+}
+
+.song-name {
+  height: 5rem;
+  overflow: hidden;
 }
 
 span.play-img {
